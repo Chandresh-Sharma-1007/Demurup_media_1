@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>DemuRup Media — Creative Marketing & Branding Agency</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: { lime: '#00cc33' },
+        fontFamily: {
+          syne: ['Syne', 'sans-serif'],
+          mono: ['Space Mono', 'monospace']
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS LINE -->
+<div class="scroll-line" id="scrollLine"></div>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursorFollower"></div>
+
+<!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
+<nav>
+  <div class="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- LOGO -->
+    <a href="#" class="text-xl font-extrabold tracking-tight" style="font-family:'Syne',sans-serif;">
+      Demu<span style="color:var(--lime)">Rup</span>
+      <span class="text-xs font-mono ml-1 opacity-40 tracking-widest">MEDIA</span>
+    </a>
+    <!-- LINKS (desktop) -->
+    <ul class="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest font-mono text-gray-400">
+      <li><a href="#services" class="hover:text-white transition-colors duration-200">Services</a></li>
+      <li><a href="#industries" class="hover:text-white transition-colors duration-200">Industries</a></li>
+      <li><a href="#about" class="hover:text-white transition-colors duration-200">About</a></li>
+    </ul>
+    <!-- CTA -->
+    <button class="btn-primary hidden md:block">Get a Proposal</button>
+    <!-- Mobile hamburger -->
+    <button class="md:hidden flex flex-col gap-1.5 p-2" id="menuBtn">
+      <span class="block w-6 h-px bg-white"></span>
+      <span class="block w-4 h-px bg-white"></span>
+      <span class="block w-6 h-px bg-white"></span>
+    </button>
+  </div>
+  <!-- Mobile menu -->
+  <div class="hidden md:hidden" id="mobileMenu" style="border-top:1px solid var(--border);">
+    <ul class="flex flex-col gap-0 text-sm uppercase tracking-widest font-mono">
+      <li><a href="#services" class="block px-6 py-4 border-b border-gray-900 hover:text-lime">Services</a></li>
+      <li><a href="#industries" class="block px-6 py-4 border-b border-gray-900 hover:text-lime">Industries</a></li>
+      <li><a href="#about" class="block px-6 py-4 border-b border-gray-900 hover:text-lime">About</a></li>
+      <li class="px-6 py-4"><button class="btn-primary w-full">Get a Proposal</button></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+<section class="hero-bg noise relative min-h-screen flex flex-col justify-center pt-24 pb-0 overflow-hidden">
+  <!-- BG decorative lines -->
+  <div class="absolute inset-0 pointer-events-none" style="background-image:repeating-linear-gradient(90deg,rgba(255,255,255,0.02) 0px,rgba(255,255,255,0.02) 1px,transparent 1px,transparent 80px); z-index:0;"></div>
+
+  <div class="max-w-screen-xl mx-auto px-6 relative z-10 w-full">
+    <!-- Badge -->
+    <div class="reveal flex items-center gap-3 mb-8">
+      <span class="w-2 h-2 rounded-full inline-block" style="background:var(--lime);"></span>
+      <span class="font-mono text-xs uppercase tracking-widest" style="color:var(--lime);">Est. 2024 · Pune, India</span>
+    </div>
+
+    <!-- Headline -->
+    <div class="reveal mb-6">
+      <h1 class="display-xl text-white uppercase">
+        The Ultimate<br>
+        <span style="color:var(--lime);" class="lime-glow">Creative</span><br>
+        <span class="italic" style="color:#555;">Marketing &</span><br>
+        Branding<br>
+        Agency.
+      </h1>
+    </div>
+
+    <!-- Subheadline + CTAs in two cols -->
+    <div class="reveal grid grid-cols-1 md:grid-cols-2 gap-8 items-end mt-10 pb-20">
+      <p class="text-gray-400 text-lg leading-relaxed max-w-md" style="font-family:'Space Mono',monospace; font-size:0.9rem; line-height:1.9;">
+        One team. Every digital need. DemuRup Media is the one-stop shop for startups, D2C brands, real estate, and finance companies ready to grow — without the chaos of juggling multiple vendors.
+      </p>
+      <div class="flex flex-wrap gap-4 items-center">
+        <button class="btn-primary">Work With Us →</button>
+        <button class="btn-outline">See Our Work</button>
+      </div>
+    </div>
+
+    <!-- Stat strip -->
+    <div class="reveal border-t" style="border-color:var(--border);">
+      <div class="grid grid-cols-2 md:grid-cols-4">
+        <div class="py-6 pr-6 border-r" style="border-color:var(--border);">
+          <div class="stat-num text-3xl font-bold text-white">100+</div>
+          <div class="text-xs uppercase tracking-widest text-gray-500 mt-1">Projects Delivered</div>
+        </div>
+        <div class="py-6 px-6 border-r" style="border-color:var(--border);">
+          <div class="stat-num text-3xl font-bold text-white">6</div>
+          <div class="text-xs uppercase tracking-widest text-gray-500 mt-1">Core Services</div>
+        </div>
+        <div class="py-6 px-6 border-r" style="border-color:var(--border);">
+          <div class="stat-num text-3xl font-bold" style="color:var(--lime);">4+</div>
+          <div class="text-xs uppercase tracking-widest text-gray-500 mt-1">Industries Served</div>
+        </div>
+        <div class="py-6 pl-6">
+          <div class="stat-num text-3xl font-bold text-white">2</div>
+          <div class="text-xs uppercase tracking-widest text-gray-500 mt-1">Founders, 1 Vision</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ MARQUEE TICKER ═══════════════════ -->
+<div class="overflow-hidden border-y" style="border-color:var(--lime); background:var(--lime); padding:0.7rem 0;">
+  <div class="marquee-track">
+    <!-- Repeated items for infinite loop effect -->
+    <span class="text-black font-mono font-bold text-sm uppercase tracking-widest px-8">Social Media Marketing</span>
+    <span class="text-black opacity-40 px-2">✦</span>
+    <span class="text-black font-mono font-bold text-sm uppercase tracking-widest px-8">Branding & Strategy</span>
+    <span class="text-black opacity-40 px-2">✦</span>
+    <span class="text-black font-mono font-bold text-sm uppercase tracking-widest px-8">Content Creation</span>
+    <span class="text-black opacity-40 px-2">✦</span>
+    <span class="text-black font-mono font-bold text-sm uppercase tracking-widest px-8">Web Design & Dev</span>
+    <span class="text-black opacity-40 px-2">✦</span>
+    <span class="text-black font-mono font-bold text-sm uppercase tracking-widest px-8">Digital Advertising</span>
+    <span class="text-black opacity-40 px-2">✦</span>
+    <span class="text-black font-mono font-bold text-sm uppercase tracking-widest px-8">Influencer Marketing</span>
+    <span class="text-black opacity-40 px-2">✦</span>
+    <span class="text-black font-mono font-bold text-sm uppercase tracking-widest px-8">Outdoor Campaigns</span>
+    <span class="text-black opacity-40 px-2">✦</span>
+    <!-- Duplicate for seamless loop -->
+    <span class="text-black font-mono font-bold text-sm uppercase tracking-widest px-8">Social Media Marketing</span>
+    <span class="text-black opacity-40 px-2">✦</span>
+    <span class="text-black font-mono font-bold text-sm uppercase tracking-widest px-8">Branding & Strategy</span>
+    <span class="text-black opacity-40 px-2">✦</span>
+    <span class="text-black font-mono font-bold text-sm uppercase tracking-widest px-8">Content Creation</span>
+    <span class="text-black opacity-40 px-2">✦</span>
+    <span class="text-black font-mono font-bold text-sm uppercase tracking-widest px-8">Web Design & Dev</span>
+    <span class="text-black opacity-40 px-2">✦</span>
+    <span class="text-black font-mono font-bold text-sm uppercase tracking-widest px-8">Digital Advertising</span>
+    <span class="text-black opacity-40 px-2">✦</span>
+    <span class="text-black font-mono font-bold text-sm uppercase tracking-widest px-8">Influencer Marketing</span>
+    <span class="text-black opacity-40 px-2">✦</span>
+    <span class="text-black font-mono font-bold text-sm uppercase tracking-widest px-8">Outdoor Campaigns</span>
+    <span class="text-black opacity-40 px-2">✦</span>
+  </div>
+</div>
+
+<!-- ═══════════════════ ABOUT SECTION ═══════════════════ -->
+<section id="about" class="py-24 border-b" style="border-color:var(--border);">
+  <div class="max-w-screen-xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-0 border" style="border-color:var(--border);">
+      <!-- Left col: label -->
+      <div class="md:col-span-3 p-8 border-b md:border-b-0 md:border-r flex flex-col justify-between" style="border-color:var(--border);">
+        <span class="num-tag">— 01 / About</span>
+        <div class="mt-8 md:mt-0">
+          <div class="w-12 h-12 border flex items-center justify-center mb-4" style="border-color:var(--lime);">
+            <span class="text-2xl">✦</span>
+          </div>
+          <p class="text-xs text-gray-500 font-mono leading-relaxed">
+            Founded 2024<br>Pune, India
+          </p>
+        </div>
+      </div>
+      <!-- Right col: content -->
+      <div class="md:col-span-9 p-8 md:p-12">
+        <h2 class="reveal display-md mb-8 text-white">
+          One Team.<br>
+          <span style="color:var(--lime);">Every Digital</span><br>
+          Need.
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="reveal">
+            <p class="text-gray-400 leading-relaxed" style="font-family:'Space Mono',monospace; font-size:0.85rem; line-height:1.9;">
+              DemuRup Media was founded in 2024 by <span class="text-white font-bold">Shailesh Sharma</span> and <span class="text-white font-bold">Harsh Newale</span> with a singular obsession: give brands a unified voice without the chaos of managing ten different vendors.
+            </p>
+          </div>
+          <div class="reveal">
+            <p class="text-gray-400 leading-relaxed" style="font-family:'Space Mono',monospace; font-size:0.85rem; line-height:1.9;">
+              Our mission is to provide a <span style="color:var(--lime);">unified brand voice</span> — handling every digital touchpoint under one roof so you can focus on growth, not coordination.
+            </p>
+          </div>
+        </div>
+        <!-- Founders -->
+        <div class="reveal mt-10 grid grid-cols-2 gap-4">
+          <div class="border p-5" style="border-color:var(--border);">
+            <div class="w-8 h-8 rounded-full mb-3" style="background:var(--lime);"></div>
+            <div class="font-bold text-sm">Shailesh Sharma</div>
+            <div class="text-xs text-gray-500 font-mono mt-1">Co-Founder & Strategy</div>
+          </div>
+          <div class="border p-5" style="border-color:var(--border);">
+            <div class="w-8 h-8 rounded-full mb-3 border" style="border-color:var(--lime);"></div>
+            <div class="font-bold text-sm">Harsh Newale</div>
+            <div class="text-xs text-gray-500 font-mono mt-1">Co-Founder & Creative</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ SERVICES BENTO GRID ═══════════════════ -->
+<section id="services" class="py-24">
+  <div class="max-w-screen-xl mx-auto px-6">
+    <!-- Section header -->
+    <div class="reveal flex items-end justify-between mb-10 pb-6 border-b" style="border-color:var(--border);">
+      <div>
+        <span class="num-tag block mb-3">— 02 / Services</span>
+        <h2 class="display-lg">
+          What We<br><span style="color:var(--lime);">Do Best.</span>
+        </h2>
+      </div>
+      <button class="btn-outline hidden md:block">All Services →</button>
+    </div>
+
+    <!-- BENTO GRID -->
+    <div class="bento-grid reveal">
+
+      <!-- Card 1: Social Media (spans 7 cols) -->
+      <div class="service-card bento-cell" style="grid-column: span 7;">
+        <span class="num-tag block mb-6">01</span>
+        <h3 class="display-md mb-4">Social Media<br>Marketing &<br>Management</h3>
+        <p class="text-gray-500 text-sm leading-relaxed font-mono mt-4 max-w-sm">
+          Scroll-stopping content calendars, community management, and platform-native strategy that builds real audiences — not just follower counts.
+        </p>
+        <div class="mt-8 flex gap-2 flex-wrap">
+          <span class="border text-xs font-mono px-3 py-1" style="border-color:var(--border);color:#666;">Instagram</span>
+          <span class="border text-xs font-mono px-3 py-1" style="border-color:var(--border);color:#666;">LinkedIn</span>
+          <span class="border text-xs font-mono px-3 py-1" style="border-color:var(--border);color:#666;">X / Twitter</span>
+          <span class="border text-xs font-mono px-3 py-1" style="border-color:var(--lime);color:var(--lime);">YouTube</span>
+        </div>
+      </div>
+
+      <!-- Card 2: Branding (spans 5 cols) -->
+      <div class="service-card bento-cell" style="grid-column: span 5; background:#0a0a0a;">
+        <span class="num-tag block mb-6">02</span>
+        <div class="mb-6">
+          <div class="text-5xl font-extrabold" style="color:var(--lime); line-height:1;">Br.</div>
+          <div class="text-5xl font-extrabold text-white" style="line-height:1;">St.</div>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Branding &<br>Strategy</h3>
+        <p class="text-gray-500 text-sm font-mono leading-relaxed">
+          Visual identity, brand voice, and positioning that make you unmistakable — from logo to messaging hierarchy.
+        </p>
+      </div>
+
+      <!-- Card 3: Content Creation (spans 4 cols) -->
+      <div class="service-card bento-cell" style="grid-column: span 4; background:#040404;">
+        <span class="num-tag block mb-6">03</span>
+        <h3 class="text-2xl font-extrabold mb-4">Content<br>Creation</h3>
+        <div class="space-y-3 mt-4">
+          <div class="flex items-center gap-3">
+            <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:var(--lime);"></span>
+            <span class="text-xs font-mono text-gray-400">Reels / Shorts (Short-form)</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:var(--lime);"></span>
+            <span class="text-xs font-mono text-gray-400">YouTube (Long-form)</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:var(--lime);"></span>
+            <span class="text-xs font-mono text-gray-400">Photography & Visuals</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Web Design (spans 4 cols) -->
+      <div class="service-card bento-cell" style="grid-column: span 4;">
+        <span class="num-tag block mb-6">04</span>
+        <h3 class="text-2xl font-extrabold mb-4">Web Design<br>& Dev</h3>
+        <p class="text-gray-500 text-sm font-mono leading-relaxed">
+          Conversion-obsessed websites built for growth, not just aesthetics. Fast, responsive, and built to convert.
+        </p>
+        <div class="mt-6 font-mono text-xs" style="color:var(--lime);">
+          → Performance-first builds
+        </div>
+      </div>
+
+      <!-- Card 5: Digital Advertising (spans 4 cols) -->
+      <div class="service-card bento-cell" style="grid-column: span 4; background:#080808;">
+        <span class="num-tag block mb-6">05</span>
+        <h3 class="text-2xl font-extrabold mb-4">Digital<br>Advertising</h3>
+        <p class="text-gray-500 text-sm font-mono leading-relaxed">
+          Paid social, Google Ads, and SEO strategies engineered to deliver measurable ROI at every funnel stage.
+        </p>
+        <div class="mt-4 grid grid-cols-2 gap-2">
+          <div class="border p-2 text-center text-xs font-mono" style="border-color:var(--border);color:#555;">PPC</div>
+          <div class="border p-2 text-center text-xs font-mono" style="border-color:var(--border);color:#555;">SEO</div>
+          <div class="border p-2 text-center text-xs font-mono" style="border-color:var(--border);color:#555;">Meta Ads</div>
+          <div class="border p-2 text-center text-xs font-mono" style="border-color:var(--lime);color:var(--lime);">Google Ads</div>
+        </div>
+      </div>
+
+      <!-- Card 6: Influencer (spans 12 cols – full width banner) -->
+      <div class="service-card bento-cell" style="grid-column: span 12; background:#030303;">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div>
+            <span class="num-tag block mb-3">06</span>
+            <h3 class="display-md">Influencer &<br>Outdoor Marketing</h3>
+          </div>
+          <p class="text-gray-500 text-sm font-mono leading-relaxed max-w-lg">
+            Authentic influencer collaborations that feel native, not forced — paired with outdoor & traditional campaigns that build brand recall in the physical world.
+          </p>
+          <button class="btn-outline flex-shrink-0">Learn More →</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ INDUSTRIES MARQUEE SECTION ═══════════════════ -->
+<section id="industries" class="py-24 border-y" style="border-color:var(--border);">
+  <div class="max-w-screen-xl mx-auto px-6">
+    <div class="reveal flex items-end justify-between mb-12 pb-6 border-b" style="border-color:var(--border);">
+      <div>
+        <span class="num-tag block mb-3">— 03 / Industries</span>
+        <h2 class="display-lg">
+          We Know<br><span style="color:var(--lime);">Your World.</span>
+        </h2>
+      </div>
+    </div>
+
+    <!-- Slow reverse marquee for industries -->
+    <div class="overflow-hidden mb-16">
+      <div style="display:flex; width:max-content; animation:marquee 20s linear infinite reverse;">
+        <span class="text-5xl font-extrabold uppercase px-10" style="color:#1a1a1a;">Healthcare</span>
+        <span class="px-4 text-5xl font-extrabold" style="color:var(--lime);">✦</span>
+        <span class="text-5xl font-extrabold uppercase px-10" style="color:#1a1a1a;">E-Commerce</span>
+        <span class="px-4 text-5xl font-extrabold" style="color:var(--lime);">✦</span>
+        <span class="text-5xl font-extrabold uppercase px-10" style="color:#1a1a1a;">Real Estate</span>
+        <span class="px-4 text-5xl font-extrabold" style="color:var(--lime);">✦</span>
+        <span class="text-5xl font-extrabold uppercase px-10" style="color:#1a1a1a;">Finance</span>
+        <span class="px-4 text-5xl font-extrabold" style="color:var(--lime);">✦</span>
+        <span class="text-5xl font-extrabold uppercase px-10" style="color:#1a1a1a;">D2C Brands</span>
+        <span class="px-4 text-5xl font-extrabold" style="color:var(--lime);">✦</span>
+        <span class="text-5xl font-extrabold uppercase px-10" style="color:#1a1a1a;">Startups</span>
+        <span class="px-4 text-5xl font-extrabold" style="color:var(--lime);">✦</span>
+        <!-- duplicate -->
+        <span class="text-5xl font-extrabold uppercase px-10" style="color:#1a1a1a;">Healthcare</span>
+        <span class="px-4 text-5xl font-extrabold" style="color:var(--lime);">✦</span>
+        <span class="text-5xl font-extrabold uppercase px-10" style="color:#1a1a1a;">E-Commerce</span>
+        <span class="px-4 text-5xl font-extrabold" style="color:var(--lime);">✦</span>
+        <span class="text-5xl font-extrabold uppercase px-10" style="color:#1a1a1a;">Real Estate</span>
+        <span class="px-4 text-5xl font-extrabold" style="color:var(--lime);">✦</span>
+        <span class="text-5xl font-extrabold uppercase px-10" style="color:#1a1a1a;">Finance</span>
+        <span class="px-4 text-5xl font-extrabold" style="color:var(--lime);">✦</span>
+      </div>
+    </div>
+
+    <!-- Industry cards -->
+    <div class="reveal grid grid-cols-1 md:grid-cols-3 gap-0 border" style="border-color:var(--border);">
+
+      <!-- Healthcare -->
+      <div class="industry-item p-8 border-b md:border-b-0 md:border-r" style="border-color:var(--border);">
+        <div class="text-xs font-mono uppercase tracking-widest mb-6" style="color:var(--lime);">Healthcare</div>
+        <h3 class="text-2xl font-extrabold mb-4">Empathetic,<br>Story-Led<br>Narratives</h3>
+        <p class="text-gray-500 text-sm font-mono leading-relaxed">
+          We build trust-first content strategies for clinics, health brands, and wellness companies. Every message balances authority with human warmth.
+        </p>
+        <div class="mt-6 font-mono text-xs text-gray-600">→ Patient education · Brand trust · Community</div>
+      </div>
+
+      <!-- E-commerce / D2C -->
+      <div class="industry-item p-8 border-b md:border-b-0 md:border-r" style="border-color:var(--border);">
+        <div class="text-xs font-mono uppercase tracking-widest mb-6" style="color:var(--lime);">E-Commerce / D2C</div>
+        <h3 class="text-2xl font-extrabold mb-4">Inclusive<br>Brand<br>Representation</h3>
+        <p class="text-gray-500 text-sm font-mono leading-relaxed">
+          From launch to scale — performance-driven content that sells while staying true to your brand identity and building genuine community.
+        </p>
+        <div class="mt-6 font-mono text-xs text-gray-600">→ Performance content · UGC · Conversion</div>
+      </div>
+
+      <!-- Real Estate & Finance -->
+      <div class="industry-item p-8">
+        <div class="text-xs font-mono uppercase tracking-widest mb-6" style="color:var(--lime);">Real Estate & Finance</div>
+        <h3 class="text-2xl font-extrabold mb-4">Tailored<br>Digital<br>Journeys</h3>
+        <p class="text-gray-500 text-sm font-mono leading-relaxed">
+          Complex, high-trust industries demand precision. We craft digital journeys that educate, qualify, and convert sophisticated buyers.
+        </p>
+        <div class="mt-6 font-mono text-xs text-gray-600">→ Lead nurture · Authority building · SEO</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CTA SECTION ═══════════════════ -->
+<section class="py-32 relative overflow-hidden">
+  <div class="absolute inset-0" style="background:radial-gradient(ellipse 60% 60% at 50% 50%, rgba(0,204,51,0.07) 0%, transparent 70%);"></div>
+  <div class="max-w-screen-xl mx-auto px-6 relative z-10 text-center">
+    <div class="reveal">
+      <span class="num-tag block mb-6">— Ready?</span>
+      <h2 class="display-xl mb-8">
+        Let's Build<br>
+        <span style="color:var(--lime);" class="lime-glow">Something</span><br>
+        <span class="italic text-gray-600">Remarkable.</span>
+      </h2>
+      <p class="text-gray-500 font-mono text-sm max-w-lg mx-auto mb-10 leading-relaxed">
+        Stop juggling agencies. One team, one voice, one goal — your growth. Let's talk about what DemuRup Media can do for your brand.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button class="btn-primary text-lg px-10 py-4">Get a Free Proposal →</button>
+        <button class="btn-outline px-10 py-4">View Case Studies</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer class="border-t" style="border-color:var(--border);">
+  <div class="max-w-screen-xl mx-auto px-6">
+
+    <!-- Top footer grid -->
+    <div class="grid grid-cols-1 md:grid-cols-12 border-b" style="border-color:var(--border);">
+
+      <!-- Brand col -->
+      <div class="md:col-span-5 py-12 pr-12 border-b md:border-b-0 md:border-r" style="border-color:var(--border);">
+        <div class="text-3xl font-extrabold mb-4" style="font-family:'Syne',sans-serif;">
+          Demu<span style="color:var(--lime);">Rup</span>
+          <span class="text-sm font-mono ml-2 opacity-30 tracking-widest">MEDIA</span>
+        </div>
+        <p class="text-gray-500 font-mono text-sm leading-relaxed max-w-xs">
+          The creative marketing & branding agency that handles everything, so you can focus on everything else.
+        </p>
+        <div class="flex gap-4 mt-8">
+          <a href="#" class="border p-2.5 text-gray-500 hover:border-lime hover:text-lime transition-all" style="border-color:var(--border);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="border p-2.5 text-gray-500 hover:border-lime hover:text-lime transition-all" style="border-color:var(--border);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="border p-2.5 text-gray-500 hover:border-lime hover:text-lime transition-all" style="border-color:var(--border);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.95C18.88 4 12 4 12 4s-6.88 0-8.59.47A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Links col -->
+      <div class="md:col-span-3 py-12 px-8 border-b md:border-b-0 md:border-r" style="border-color:var(--border);">
+        <div class="text-xs font-mono uppercase tracking-widest text-gray-600 mb-6">Services</div>
+        <ul class="space-y-3 text-sm text-gray-400 font-mono">
+          <li><a href="#" class="hover:text-lime">Social Media</a></li>
+          <li><a href="#" class="hover:text-lime">Branding & Strategy</a></li>
+          <li><a href="#" class="hover:text-lime">Content Creation</a></li>
+          <li><a href="#" class="hover:text-lime">Web Development</a></li>
+          <li><a href="#" class="hover:text-lime">Digital Advertising</a></li>
+          <li><a href="#" class="hover:text-lime">Influencer Marketing</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact col -->
+      <div class="md:col-span-4 py-12 pl-8">
+        <div class="text-xs font-mono uppercase tracking-widest text-gray-600 mb-6">Contact</div>
+        <div class="space-y-4 text-sm text-gray-400 font-mono">
+          <div>
+            <div class="text-xs text-gray-600 mb-1">Email</div>
+            <a href="mailto:hello@demurupmedia.com" class="hover:text-lime">hello@demurupmedia.com</a>
+          </div>
+          <div>
+            <div class="text-xs text-gray-600 mb-1">Location</div>
+            <span>Pune, Maharashtra, India</span>
+          </div>
+          <div class="pt-4">
+            <button class="btn-primary w-full">Start a Project →</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <span class="text-xs font-mono text-gray-600">© 2026 DemuRup Media. All rights reserved.</span>
+      <div class="flex gap-6 text-xs font-mono text-gray-600">
+        <a href="#" class="hover:text-lime">Privacy Policy</a>
+        <a href="#" class="hover:text-lime">Terms of Service</a>
+        <span style="color:var(--lime);">✦ Built in Pune</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════ JAVASCRIPT ═══════════════════ -->
+ <script src="script.js"></script>
+</body>
+</html>
