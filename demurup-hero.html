@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demurup Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{--green:#00cc33;--black:#000;--white:#fff;--font:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--white);color:var(--black);font-family:var(--font)}
+body.lock{overflow:hidden}
+
+/* ---------- Splash ---------- */
+.splash{position:fixed;inset:0;z-index:100;background:var(--white);display:grid;place-items:center;transition:transform .55s cubic-bezier(.7,0,.2,1)}
+.splash.done{transform:translateY(-100%)}
+.splash.gone{display:none}
+.logo{position:relative;font-size:clamp(2.8rem,10vw,6rem);font-weight:800;letter-spacing:-.04em;line-height:1;white-space:nowrap}
+.logo .base{color:#d4d4d4}
+.logo .fill{position:absolute;inset:0;clip-path:polygon(0 100%,100% 100%,100% 100%,0 100%)}
+.logo .fill b{color:var(--black);font-weight:800}
+.logo .fill i{color:var(--green);font-style:normal}
+
+/* ---------- Hero ---------- */
+.hero{--mx:50%;--my:50%;position:relative;min-height:560px;height:100svh;overflow:hidden;display:grid;place-items:center;background:var(--white);
+  background-image:linear-gradient(rgba(0,0,0,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.07) 1px,transparent 1px);background-size:48px 48px;
+  padding:0 1.25rem}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(var(--green) 1.5px,transparent 1.5px),linear-gradient(90deg,var(--green) 1.5px,transparent 1.5px);background-size:48px 48px;
+  -webkit-mask-image:radial-gradient(circle 170px at var(--mx) var(--my),#000 0,transparent 100%);mask-image:radial-gradient(circle 170px at var(--mx) var(--my),#000 0,transparent 100%);
+  opacity:0;transition:opacity .3s}
+.hero.active::after{opacity:1}
+
+.copy{position:relative;z-index:2;text-align:center;pointer-events:none;max-width:60rem}
+h1{font-size:clamp(2.4rem,4.8vw,4.6rem);font-weight:800;line-height:.98;letter-spacing:-.035em;text-transform:uppercase}
+h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+h1 .ln span{display:block;transform:translateY(105%)}
+.typed{display:inline-flex;align-items:center;margin-top:1.6rem;min-height:2.6rem;padding:.35rem .9rem;background:var(--green);color:var(--black);
+  font-size:1.3rem;font-weight:500;letter-spacing:-.01em;border:2px solid var(--black);box-shadow:4px 4px 0 var(--black);opacity:0}
+.typed .caret{width:2px;height:1.2em;background:var(--black);margin-left:3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.loaded h1 .ln span{transform:none;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.loaded h1 .ln:nth-child(2) span{transition-delay:.12s}
+.loaded .typed{opacity:1;transition:opacity .5s .5s}
+
+/* ---------- Interactive shapes ---------- */
+.shape{position:absolute;left:0;top:0;z-index:1;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;will-change:transform;opacity:0;transition:opacity .4s}
+.shape svg{display:block;overflow:visible;pointer-events:none;filter:drop-shadow(4px 4px 0 #000)}
+.shape.flat svg{filter:none}
+.shape.drag{cursor:grabbing;z-index:3}
+.loaded .shape{opacity:1}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+:focus-visible{outline:3px solid var(--black);outline-offset:3px}
+@media (max-width:640px){.typed{font-size:1.3rem;max-width:100%}}
+</style>
+</head>
+<body class="lock">
+
+<div class="splash" id="splash" aria-hidden="true">
+  <div class="logo">
+    <span class="base">Demurup</span>
+    <span class="fill" id="fill"><b>Demu</b><i>rup</i></span>
+  </div>
+</div>
+
+<section class="hero" id="hero" aria-label="Demurup Media">
+  <div class="copy">
+    <h1 aria-label="One stop solution for">
+      <span class="ln"><span>One stop</span></span>
+      <span class="ln"><span>solution for</span></span>
+    </h1>
+    <p class="typed" id="typed"><span id="word"></span><span class="caret" aria-hidden="true"></span></p>
+    <p class="sr">Social Media Management, Web Design and Development, Branding, SEO, Performance Marketing, Influencer Marketing</p>
+  </div>
+</section>
+
+<script>
+(function(){
+  /* ---------- Splash: grey logo filled by a wave, bottom to top, 2.3s ---------- */
+  var DUR=2300, fill=document.getElementById('fill'), splash=document.getElementById('splash');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var t0=null;
+  function wave(now){
+    if(t0===null)t0=now;
+    var t=now-t0, p=Math.min(t/DUR,1), e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
+    var amp=9*(1-p*.6), lvl=100+amp-e*(100+amp*2), pts=['0% 100%'];
+    for(var i=0;i<=40;i++){var x=i*2.5;pts.push(x+'% '+(lvl+amp*Math.sin(x*.14+t*.012)).toFixed(2)+'%');}
+    pts.push('100% 100%');
+    fill.style.clipPath='polygon('+pts.join(',')+')';
+    if(p<1)requestAnimationFrame(wave);else finish();
+  }
+  function finish(){
+    fill.style.clipPath='none';
+    splash.classList.add('done');
+    document.body.classList.remove('lock');
+    document.body.classList.add('loaded');
+    startHero();
+    setTimeout(function(){splash.classList.add('gone')},600);
+  }
+  requestAnimationFrame(wave);
+
+  /* ---------- Typing / backspacing ---------- */
+  var words=['Social Media Management','Web Design & Development','Branding','SEO','Performance Marketing','Influencer Marketing'];
+  var el=document.getElementById('word'), wi=0, ci=0, del=false;
+  function type(){
+    var w=words[wi], delay;
+    if(!del){ci++;el.textContent=w.slice(0,ci);delay=75;if(ci===w.length){del=true;delay=1500;}}
+    else{ci--;el.textContent=w.slice(0,ci);delay=38;if(ci===0){del=false;wi=(wi+1)%words.length;delay=350;}}
+    setTimeout(type,delay);
+  }
+
+  /* ---------- Shapes ---------- */
+  var S='stroke="#000" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"';
+  var G='#00cc33',W2='#fff';
+  var defs=[
+    /* Social media management: chat bubble with typing dots and a like heart */
+    {w:150,h:56,vb:'0 0 150 56',svg:'<path d="M12 4H110A10 10 0 0 1 120 14V34A10 10 0 0 1 110 44H48L28 54V44H12A10 10 0 0 1 2 34V14A10 10 0 0 1 12 4Z" fill="'+G+'" '+S+'/><circle cx="36" cy="24" r="5" fill="#000"/><circle cx="61" cy="24" r="5" fill="#000"/><circle cx="86" cy="24" r="5" fill="#000"/><path d="M134 40C118 30 122 16 131 16 134 16 134 20 134 20S134 16 138 16C147 16 150 30 134 40Z" fill="'+W2+'" '+S+'/>',d:[.08,.2,.10,.12]},
+    /* Performance marketing: target with an arrow */
+    {w:96,h:96,vb:'0 0 100 100',svg:'<circle cx="48" cy="52" r="42" fill="'+W2+'" '+S+'/><circle cx="48" cy="52" r="28" fill="'+G+'" '+S+'/><circle cx="48" cy="52" r="13" fill="#000"/><path d="M48 52L88 12M88 12L74 14M88 12L86 26" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>',d:[.86,.17,.80,.10]},
+    /* Branding: pen nib */
+    {w:96,h:96,vb:'0 0 100 100',svg:'<path d="M50 6L78 52L60 72V90H40V72L22 52Z" fill="'+W2+'" '+S+'/><path d="M50 6V50" fill="none" '+S+'/><circle cx="50" cy="56" r="8" fill="'+G+'" '+S+'/><path d="M40 82H60" fill="none" '+S+'/>',d:[.9,.62,.78,.86]},
+    /* Web design and development: browser window with code brackets */
+    {w:130,h:66,vb:'0 0 130 66',svg:'<rect x="3" y="3" width="124" height="60" rx="6" fill="'+W2+'" '+S+'/><path d="M3 20H127V9A6 6 0 0 0 121 3H9A6 6 0 0 0 3 9Z" fill="'+G+'" '+S+'/><circle cx="14" cy="11.5" r="2.6" fill="#000"/><circle cx="23" cy="11.5" r="2.6" fill="#000"/><circle cx="32" cy="11.5" r="2.6" fill="#000"/><path d="M48 32L36 42L48 52M82 32L94 42L82 52M70 30L60 54" fill="none" stroke="#000" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>',d:[.12,.74,.06,.82]},
+    /* SEO: search bar with magnifier */
+    {w:140,h:56,vb:'0 0 140 56',svg:'<rect x="3" y="8" width="134" height="40" rx="8" fill="'+W2+'" '+S+'/><path d="M16 28H62M16 38H44" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round"/><circle cx="104" cy="26" r="15" fill="'+G+'" '+S+'/><path d="M115 37L132 54" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>',d:[.27,.07,.34,.04]},
+    /* Influencer marketing: megaphone */
+    {w:84,h:70,vb:'0 0 84 70',svg:'<path d="M6 26L50 6V58L6 40Z" fill="'+G+'" '+S+'/><path d="M50 6V58" fill="none" '+S+'/><rect x="2" y="24" width="12" height="18" rx="3" fill="#000"/><path d="M16 42L22 64H34L30 50" fill="'+W2+'" '+S+'/><path d="M62 22L76 14M64 32H80M62 42L76 50" fill="none" stroke="#000" stroke-width="4.5" stroke-linecap="round"/>',d:[.7,.86,.62,.9]},
+    /* Clicks and interaction: cursor arrow */
+    {w:44,h:44,vb:'0 0 44 44',svg:'<path d="M9 4V35L17 28L23 40L30 37L24 25L35 24Z" fill="'+G+'" '+S+'/>',d:[.2,.5,.9,.5]},
+    /* Performance marketing: growth bars with arrow */
+    {w:110,h:78,vb:'0 0 110 78',svg:'<rect x="6" y="46" width="22" height="26" fill="'+W2+'" '+S+'/><rect x="36" y="32" width="22" height="40" fill="'+G+'" '+S+'/><rect x="66" y="18" width="22" height="54" fill="'+W2+'" '+S+'/><path d="M10 30L44 14L62 22L100 4M100 4H86M100 4V18" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>',d:[.72,.07,.84,.26]}
+  ];
+  var hero=document.getElementById('hero'), shapes=[], W=0,H=0, mobile=false, ptr={x:-999,y:-999}, drag=null, started=false;
+
+  function build(){
+    defs.forEach(function(d,i){
+      var n=document.createElement('div');
+      n.className='shape'+(d.flat?' flat':'');
+      n.setAttribute('aria-hidden','true');
+      n.innerHTML='<svg width="'+d.w+'" height="'+d.h+'" viewBox="'+d.vb+'">'+d.svg+'</svg>';
+      hero.appendChild(n);
+      var s={n:n,d:d,x:0,y:0,vx:0,vy:0,r:((i*37)%40-20)*.5,b:((i*37)%40-20)*.5,hx:0,hy:0,k:1,ph:i*1.7};
+      n.addEventListener('pointerdown',function(e){
+        e.preventDefault();n.setPointerCapture(e.pointerId);
+        var b=hero.getBoundingClientRect();
+        drag={s:s,ox:e.clientX-b.left-s.x,oy:e.clientY-b.top-s.y,lx:s.x,ly:s.y};
+        n.classList.add('drag');
+      });
+      shapes.push(s);
+    });
+  }
+  function layout(){
+    var b=hero.getBoundingClientRect();W=b.width;H=b.height;mobile=W<720;
+    var k=mobile?.62:Math.min(1,W/1200)*1.0+.0;
+    shapes.forEach(function(s){
+      s.k=k;var d=s.d,p=mobile?[d.d[2],d.d[3]]:[d.d[0],d.d[1]];
+      s.hx=p[0]*W-d.w*k/2;s.hy=p[1]*H-d.h*k/2;
+      if(!started){s.x=s.hx;s.y=s.hy;}
+      s.n.firstChild.style.transform='scale('+k+')';s.n.firstChild.style.transformOrigin='0 0';
+    });
+  }
+  function move(e){
+    var b=hero.getBoundingClientRect();ptr.x=e.clientX-b.left;ptr.y=e.clientY-b.top;
+    hero.style.setProperty('--mx',ptr.x+'px');hero.style.setProperty('--my',ptr.y+'px');
+    hero.classList.add('active');
+    if(drag){var s=drag.s;s.x=ptr.x-drag.ox;s.y=ptr.y-drag.oy;}
+  }
+  function leave(){ptr.x=ptr.y=-999;hero.classList.remove('active');}
+  function up(){if(drag){drag.s.n.classList.remove('drag');drag=null;}}
+
+  var last=0;
+  function tick(now){
+    var dt=Math.min((now-last)/16.67||1,3);last=now;
+    shapes.forEach(function(s){
+      var w=s.d.w*s.k,h=s.d.h*s.k;
+      if(drag&&drag.s===s){s.vx=(s.x-drag.lx)/dt*.9;s.vy=(s.y-drag.ly)/dt*.9;drag.lx=s.x;drag.ly=s.y;}
+      else{
+        var fx=(s.hx-s.x)*.006,fy=(s.hy-s.y)*.006;
+        var dx=s.x+w/2-ptr.x,dy=s.y+h/2-ptr.y,dist=Math.sqrt(dx*dx+dy*dy)||1,R=mobile?120:190;
+        if(dist<R){var f=(1-dist/R)*2.2;fx+=dx/dist*f;fy+=dy/dist*f;}
+        if(!reduce){fx+=Math.sin(now*.0007+s.ph)*.02;fy+=Math.cos(now*.0008+s.ph)*.02;}
+        s.vx=(s.vx+fx*dt)*Math.pow(.92,dt);s.vy=(s.vy+fy*dt)*Math.pow(.92,dt);
+        s.x+=s.vx*dt;s.y+=s.vy*dt;
+        if(s.x<-w*.3){s.x=-w*.3;s.vx*=-.6}if(s.x>W-w*.7){s.x=W-w*.7;s.vx*=-.6}
+        if(s.y<-h*.3){s.y=-h*.3;s.vy*=-.6}if(s.y>H-h*.7){s.y=H-h*.7;s.vy*=-.6}
+      }
+      var tr=s.b+Math.max(-28,Math.min(28,s.vx*4));s.r+=(tr-s.r)*.14*dt;
+      s.n.style.transform='translate3d('+s.x.toFixed(1)+'px,'+s.y.toFixed(1)+'px,0) rotate('+s.r.toFixed(1)+'deg)';
+    });
+    requestAnimationFrame(tick);
+  }
+
+  build();layout();
+  window.addEventListener('resize',function(){started=true;layout();});
+  hero.addEventListener('pointermove',move);
+  hero.addEventListener('pointerdown',move);
+  hero.addEventListener('pointerleave',leave);
+  window.addEventListener('pointerup',up);window.addEventListener('pointercancel',up);
+
+  function startHero(){started=true;type();}
+  requestAnimationFrame(function(t){last=t;tick(t);});
+})();
+</script>
+</body>
+</html>
