@@ -28,8 +28,8 @@
 }
 
 :root {
-  --font-heading: "The Seasons", serif;
-  --font-body: "Beautiful Delight", serif;
+  --font-heading: "The Seasons";
+  --font-body: "Beautiful Delight";
   --lime: #00cc33;
   --lime-dark: #009922;
   --black: #000000;
@@ -47,7 +47,7 @@ h5,
 h6,
 nav,
 button {
-  font-family: var(--font-heading);
+  font-family: "The Seasons" !important;
 }
 
 *,
@@ -65,7 +65,7 @@ html {
 body {
   background: var(--black);
   color: var(--white);
-  font-family: var(--font-body);
+  font-family: "The Seasons" !important;
   overflow-x: hidden;
   cursor: none;
   -webkit-font-smoothing: antialiased;
@@ -115,11 +115,11 @@ body {
 
 /* ── Fonts ── */
 .font-display {
-  font-family: var(--font-heading);
+  font-family: "The Seasons" !important;
 }
 
 .font-mono {
-  font-family: var(--font-body);
+  font-family: "The Seasons" !important;
 }
 
 /* ── Noise grain ── */
@@ -212,7 +212,7 @@ section#clients[data-theme="light"] {
   align-items: center;
   gap: 0.75rem;
   padding: 0.9rem 1.85rem;
-  font-family: var(--font-heading, "The Seasons", serif);
+  font-family: "The Seasons" !important;
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.16em;
@@ -561,7 +561,7 @@ body.menu-open #hamburger span {
 
 /* ── Section label ── */
 .slabel {
-  font-family: var(--font-body);
+  font-family: "The Seasons" !important;
   font-size: 0.7rem;
   letter-spacing: 0.22em;
   color: var(--gray);
@@ -643,7 +643,7 @@ body.menu-open #hamburger span {
   background: var(--lime);
   color: #000;
   font-weight: 700;
-  font-family: var(--font-heading);
+  font-family: "The Seasons" !important;
   border: 2px solid var(--lime);
   transition: all 0.25s;
   letter-spacing: 0.04em;
@@ -662,7 +662,7 @@ body.menu-open #hamburger span {
   background: transparent;
   color: var(--white);
   font-weight: 600;
-  font-family: var(--font-heading);
+  font-family: "The Seasons" !important;
   border: 2px solid #2a2a2a;
   transition: all 0.25s;
   letter-spacing: 0.04em;
@@ -728,14 +728,14 @@ body.menu-open #hamburger span {
 
 /* ── Stat num ── */
 .stat-num {
-  font-family: var(--font-heading);
+  font-family: "The Seasons" !important;
   font-size: clamp(2.4rem, 5vw, 4.2rem);
   color: var(--lime);
   line-height: 1;
 }
 
 .service-tag {
-  font-family: var(--font-body);
+  font-family: "The Seasons" !important;
   font-size: 0.67rem;
   color: var(--lime);
   letter-spacing: 0.2em;
@@ -761,7 +761,7 @@ body.menu-open #hamburger span {
 }
 
 .logo-text {
-  font-family: var(--font-heading);
+  font-family: "The Seasons" !important;
   font-size: 1rem;
   letter-spacing: 0.08em;
   color: #fff;
@@ -786,7 +786,7 @@ body.menu-open #hamburger span {
 }
 
 .step-num {
-  font-family: var(--font-heading);
+  font-family: "The Seasons" !important;
   font-size: 5rem;
   line-height: 1;
   color: var(--lime);
@@ -828,7 +828,7 @@ body.menu-open #hamburger span {
   color: #fff;
   border-radius: 8px;
   padding: 14px 16px;
-  font-family: var(--font-body);
+  font-family: "The Seasons" !important;
   font-size: 0.9rem;
   outline: none;
   transition: border-color 0.25s;
@@ -845,7 +845,7 @@ body.menu-open #hamburger span {
 }
 
 .form-label {
-  font-family: var(--font-body);
+  font-family: "The Seasons" !important;
   font-size: 0.7rem;
   letter-spacing: 0.15em;
   color: var(--gray);
@@ -980,7 +980,7 @@ select.form-input option {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s;
-  font-family: var(--font-body);
+  font-family: "The Seasons" !important;
 }
 
 .wa-float:hover .wa-float-label {
@@ -1110,7 +1110,7 @@ select.form-input option {
 
 .dr-p-label {
   display: block;
-  font-family: var(--font-body);
+  font-family: "The Seasons" !important;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -1126,7 +1126,7 @@ select.form-input option {
   color: #000000;
   border-radius: 10px;
   padding: 12px 14px;
-  font-family: var(--font-body);
+  font-family: "The Seasons" !important;
   font-size: 0.9rem;
   outline: none;
   transition:
@@ -1313,7 +1313,7 @@ section p:not(.slabel):not(.service-tag):not(.stat-num) {
 
 /* Fallback text if image 404s */
 .logo-img-item .logo-fallback {
-  font-family: var(--font-heading);
+  font-family: "The Seasons" !important;
   font-size: 0.95rem;
   letter-spacing: 0.08em;
   color: rgba(255, 255, 255, 0.6);
@@ -1487,7 +1487,7 @@ section p:not(.slabel):not(.service-tag):not(.stat-num) {
 }
 
 .dr-pop-badge-text {
-  font-family: var(--font-heading, "The Seasons", serif);
+  font-family: "The Seasons" !important;
   font-size: 0.7rem;
   letter-spacing: 0.18em;
   color: #00cc33;
@@ -1498,7 +1498,7 @@ section p:not(.slabel):not(.service-tag):not(.stat-num) {
 
 /* — Main Headline — Strongest visual element — */
 .dr-pop-headline {
-  font-family: var(--font-heading, "The Seasons", serif);
+  font-family: "The Seasons" !important;
   font-size: clamp(2.1rem, 5.2vw, 2.75rem);
   line-height: 1.04;
   letter-spacing: -0.015em;
@@ -1517,7 +1517,7 @@ section p:not(.slabel):not(.service-tag):not(.stat-num) {
 
 /* — Supporting Subtitle — */
 .dr-pop-sub {
-  font-family: var(--font-body, "Beautiful Delight", serif);
+  font-family: "The Seasons" !important;
   font-size: 0.98rem;
   color: rgba(255, 255, 255, 0.72);
   line-height: 1.55;
@@ -1549,7 +1549,7 @@ section p:not(.slabel):not(.service-tag):not(.stat-num) {
   padding: 16px 28px;
   background: #00cc33;
   color: #050805;
-  font-family: var(--font-heading, "The Seasons", serif);
+  font-family: "The Seasons" !important;
   font-size: 1rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -1603,7 +1603,7 @@ section p:not(.slabel):not(.service-tag):not(.stat-num) {
 #dr-later-btn {
   display: inline-block;
   text-align: center;
-  font-family: var(--font-body, "Beautiful Delight", serif);
+  font-family: "The Seasons" !important;
   font-size: 0.78rem;
   letter-spacing: 0.16em;
   color: rgba(255, 255, 255, 0.42);
@@ -1818,7 +1818,7 @@ body.dr-splash-active {
 .dr-splash-logo {
   position: relative;
 
-  font-family: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  font-family: "The Seasons" !important;
   font-size: clamp(2.8rem, 10vw, 6rem);
   font-weight: 800;
   letter-spacing: -0.04em;
@@ -1837,12 +1837,7 @@ body.dr-splash-active {
   position: absolute;
   inset: 0;
 
-  clip-path: polygon(
-    0 100%,
-    100% 100%,
-    100% 100%,
-    0 100%
-  );
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
 }
 
 /* "Demu" */
@@ -2039,7 +2034,7 @@ body.dr-splash-active {
   will-change: transform;
   transform-origin: center;
   color: #ffffff;
-  font-family: var(--font-heading);
+  font-family: "The Seasons" !important;
   font-size: clamp(2.1rem, 4.2vw, 3.8rem);
   font-weight: 600;
   line-height: 1.25;
@@ -2163,7 +2158,7 @@ body.dr-splash-active {
 .dr-service-item-link {
   display: inline-block;
   color: rgba(255, 255, 255, 0.85);
-  font-family: var(--font-heading);
+  font-family: "The Seasons" !important;
   font-size: 1.2rem;
   font-weight: 500;
   text-decoration: none;
@@ -2227,7 +2222,7 @@ body.dr-splash-active {
 }
 
 .dr-menu-sublabel {
-  font-family: var(--font-body);
+  font-family: "The Seasons" !important;
   font-size: 0.72rem;
   letter-spacing: 0.2em;
   color: rgba(255, 255, 255, 0.45);
@@ -2239,7 +2234,7 @@ body.dr-splash-active {
 .dr-menu-contact-link,
 .dr-menu-text {
   color: #ffffff;
-  font-family: var(--font-body);
+  font-family: "The Seasons" !important;
   font-size: 1.15rem;
   font-weight: 400;
   text-decoration: none;
@@ -2261,7 +2256,7 @@ body.dr-splash-active {
 .dr-menu-social-link {
   display: inline-block;
   color: #ffffff;
-  font-family: var(--font-heading);
+  font-family: "The Seasons" !important;
   font-size: 1.05rem;
   text-decoration: none;
   transition:
@@ -2384,7 +2379,7 @@ body.menu-open {
   }
 
   .dr-services-accordion-list .dr-service-item-link {
-    font-family: var(--font-heading);
+    font-family: "The Seasons" !important;
     font-size: clamp(1.05rem, 3.8vw, 1.22rem);
     font-weight: 500;
     color: rgba(255, 255, 255, 0.82);
@@ -2455,7 +2450,7 @@ body.menu-open {
   }
 
   .dr-menu-sublabel {
-    font-family: var(--font-body);
+    font-family: "The Seasons" !important;
     font-size: 0.72rem;
     letter-spacing: 0.22em;
     color: rgba(255, 255, 255, 0.42);
@@ -2467,7 +2462,7 @@ body.menu-open {
   .dr-menu-contact-link,
   .dr-menu-text {
     color: #ffffff;
-    font-family: var(--font-body);
+  font-family: "The Seasons" !important;
     font-size: 1.08rem;
     font-weight: 400;
     line-height: 1.4;
@@ -2489,7 +2484,7 @@ body.menu-open {
 
   .dr-menu-social-link {
     color: #ffffff;
-    font-family: var(--font-heading);
+  font-family: "The Seasons" !important;
     font-size: 1.05rem;
     font-weight: 500;
     text-decoration: none;
@@ -2727,16 +2722,7 @@ body.menu-open {
 }
 
 .dr-svg-text {
-  font-family:
-    "Plus Jakarta Sans",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    Arial,
-    sans-serif,
-    "Impact";
+  font-family: "The Seasons" !important;
   font-weight: 1000;
   text-transform: uppercase;
   letter-spacing: -0.025em;
@@ -2795,15 +2781,7 @@ body.menu-open {
 
 /* Node Typography (Clean, Bold, Premium & Highly Readable matching Approved Visual) */
 .dr-node-label {
-  font-family:
-    "Plus Jakarta Sans",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    Arial,
-    sans-serif;
+  font-family: "The Seasons" !important;
   font-size: 25px;
   font-weight: 600;
   fill: #ffffff;
@@ -2977,7 +2955,7 @@ body.menu-open {
 }
 
 .client-card-title {
-  font-family: var(--font-heading);
+  font-family: "The Seasons" !important;
   font-size: 1.5rem;
   font-weight: 700;
   color: #ffffff;
@@ -3021,13 +2999,7 @@ body.menu-open {
 .srv-body {
   background-color: #ffffff !important;
   color: #111111 !important;
-  font-family:
-    "Plus Jakarta Sans",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif !important;
+  font-family:"The Seasons" !important;
   overflow-x: hidden !important;
   width: 100% !important;
   max-width: 100% !important;
@@ -3127,13 +3099,7 @@ body.menu-open {
 }
 
 .srv-hero-title {
-  font-family:
-    "Plus Jakarta Sans",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif !important;
+ font-family: "The Seasons" !important;
   font-size: clamp(2.5rem, 5.5vw, 4.8rem);
   font-weight: 800;
   line-height: 1.08;
@@ -3184,13 +3150,7 @@ body.menu-open {
 }
 
 .srv-intro-text {
-  font-family:
-    "Plus Jakarta Sans",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif !important;
+  font-family: "The Seasons" !important;
   font-size: clamp(1.15rem, 1.7vw, 1.4rem);
   line-height: 1.7;
   color: #1a1a1a;
@@ -3220,13 +3180,7 @@ body.menu-open {
 }
 
 .srv-trust-title {
-  font-family:
-    "Plus Jakarta Sans",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif !important;
+  font-family: "The Seasons" !important;
   font-size: 0.85rem;
   font-weight: 800;
   letter-spacing: 0.2em;
@@ -3372,13 +3326,7 @@ body.menu-open {
 }
 
 .srv-tab-num {
-  font-family:
-    "Plus Jakarta Sans",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif !important;
+  font-family: "The Seasons" !important;
   font-size: 0.85rem;
   font-weight: 800;
   color: #999999;
@@ -3387,13 +3335,7 @@ body.menu-open {
 }
 
 .srv-tab-name {
-  font-family:
-    "Plus Jakarta Sans",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif !important;
+  font-family: "The Seasons" !important;
   font-size: 1.15rem;
   font-weight: 800;
   color: #222222;
@@ -3469,13 +3411,7 @@ body.menu-open {
 }
 
 .srv-panel-heading {
-  font-family:
-    "Plus Jakarta Sans",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif !important;
+  font-family: "The Seasons" !important;
   font-size: clamp(1.6rem, 2.2vw, 2.2rem);
   font-weight: 800;
   color: #000000;
@@ -3485,13 +3421,7 @@ body.menu-open {
 }
 
 .srv-panel-lead {
-  font-family:
-    "Plus Jakarta Sans",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif !important;
+  font-family: "The Seasons" !important;
   font-size: 1.1rem;
   line-height: 1.65;
   color: #444444;
@@ -3540,13 +3470,7 @@ body.menu-open {
 .srv-point-content strong {
   display: block;
   color: #000000;
-  font-family:
-    "Plus Jakarta Sans",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif !important;
+  font-family: "The Seasons" !important;
   font-size: 1.05rem;
   font-weight: 700;
   margin-bottom: 0.35rem;
@@ -3586,13 +3510,7 @@ body.menu-open {
 }
 
 .srv-step-num {
-  font-family:
-    "Plus Jakarta Sans",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif !important;
+ font-family: "The Seasons" !important;
   font-size: 0.95rem;
   font-weight: 800;
   color: #00cc33;
@@ -3606,13 +3524,7 @@ body.menu-open {
 }
 
 .srv-step-title {
-  font-family:
-    "Plus Jakarta Sans",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif !important;
+  font-family: "The Seasons" !important;
   font-size: 1.05rem;
   font-weight: 700;
   color: #000000;
@@ -3744,7 +3656,7 @@ body.menu-open {
 }
 
 #about .about-heading {
-  font-family: var(--font-heading);
+ font-family: "The Seasons" !important;
   font-size: clamp(3.8875rem, 5.41vw, 5.5675rem);
   line-height: 0.98;
   letter-spacing: -0.025em;
@@ -3776,7 +3688,7 @@ body.menu-open {
   background-color: var(--about-text);
   color: var(--about-bg);
   border: 2px solid var(--about-text);
-  font-family: var(--font-heading);
+  font-family: "The Seasons" !important;
   font-size: 1.375rem;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -3813,7 +3725,7 @@ body.menu-open {
 }
 
 #about .about-locale {
-  font-family: var(--font-body);
+  font-family: "The Seasons" !important;
   font-size: 1.275rem;
   color: var(--about-muted);
   letter-spacing: 0.04em;
@@ -3859,7 +3771,7 @@ body.menu-open {
 }
 
 #about .about-manifesto-lead {
-  font-family: var(--font-heading);
+ font-family: "The Seasons" !important;
   font-size: clamp(1.15rem, 1.55vw, 1.45rem);
   font-weight: 700;
   color: var(--about-text);
@@ -3873,7 +3785,7 @@ body.menu-open {
 }
 
 #about .about-manifesto-punch {
-  font-family: var(--font-heading);
+ font-family: "The Seasons" !important;
   font-size: clamp(1.95rem, 2.85vw, 2.95rem);
   font-weight: 900;
   color: var(--about-green);
@@ -3918,134 +3830,137 @@ body.menu-open {
 
 /* ── World & Ground Shadows ── */
 #about .dr-sb-world {
+  -webkit-transform-origin: 380px 260px;
   transform-origin: 380px 260px;
-  will-change: transform;
 }
 
 #about .dr-sb-floor-shadow {
+  -webkit-transform-origin: 380px 385px;
   transform-origin: 380px 385px;
-  will-change: transform, opacity;
 }
 
 #about .dr-sb-floor-green {
+  -webkit-transform-origin: 385px 388px;
   transform-origin: 385px 388px;
   opacity: 0;
-  will-change: opacity, transform;
 }
 
 /* ── Shards Base Origins & Transforms ── */
 #about .dr-sb-shard {
-  transform-box: fill-box;
-  will-change: transform, opacity;
 }
 
 #about .dr-sb-shard-apex {
+  -webkit-transform-origin: 360px 165px;
   transform-origin: 360px 165px;
 }
 
 #about .dr-sb-shard-left {
+  -webkit-transform-origin: 280px 280px;
   transform-origin: 280px 280px;
 }
 
 #about .dr-sb-shard-right {
+  -webkit-transform-origin: 440px 280px;
   transform-origin: 440px 280px;
 }
 
 #about .dr-sb-shard-sill {
+  -webkit-transform-origin: 365px 366px;
   transform-origin: 365px 366px;
   opacity: 0;
 }
 
 #about .dr-sb-shard-brace {
+  -webkit-transform-origin: 405px 342px;
   transform-origin: 405px 342px;
   opacity: 0;
 }
 
 #about .dr-sb-shard-accent {
+  -webkit-transform-origin: 478px 148px;
   transform-origin: 478px 148px;
   opacity: 0;
 }
 
 #about .dr-sb-shard-tumble {
+  -webkit-transform-origin: 270px 140px;
   transform-origin: 270px 140px;
   opacity: 0;
 }
 
 #about .dr-sb-portal-window {
   opacity: 0;
-  will-change: opacity, transform;
 }
 
 #about .dr-sb-crack-fx {
   opacity: 0;
-  will-change: opacity;
 }
 
 #about .dr-sb-core-group {
+  -webkit-transform-origin: 365px 245px;
   transform-origin: 365px 245px;
   opacity: 0;
-  will-change: transform, opacity;
 }
 
 /* ── Articulated Silhouette Figure Rig ── */
 #about .dr-sb-unified-figure {
+  -webkit-transform-origin: 0px 368px;
   transform-origin: 0px 368px;
-  will-change: transform;
 }
 
 #about .dr-sb-fig-skeleton {
+  -webkit-transform-origin: 0px 368px;
   transform-origin: 0px 368px;
-  will-change: transform;
 }
 
 #about .dr-sb-fig-shadow {
+  -webkit-transform-origin: 0px 368px;
   transform-origin: 0px 368px;
-  will-change: transform, opacity;
 }
 
 #about .dr-sb-torso-group {
+  -webkit-transform-origin: 0px 323px;
   transform-origin: 0px 323px;
-  will-change: transform;
 }
 
 #about .dr-sb-thigh-front {
+  -webkit-transform-origin: 1px 322px;
   transform-origin: 1px 322px;
-  will-change: transform;
 }
 
 #about .dr-sb-shin-front {
+  -webkit-transform-origin: 2px 344px;
   transform-origin: 2px 344px;
-  will-change: transform;
 }
 
 #about .dr-sb-thigh-rear {
+  -webkit-transform-origin: -1px 322px;
   transform-origin: -1px 322px;
-  will-change: transform;
 }
 
 #about .dr-sb-shin-rear {
+  -webkit-transform-origin: -2px 344px;
   transform-origin: -2px 344px;
-  will-change: transform;
 }
 
 #about .dr-sb-bicep-front {
+  -webkit-transform-origin: 3px 287px;
   transform-origin: 3px 287px;
-  will-change: transform;
 }
 
 #about .dr-sb-forearm-front {
+  -webkit-transform-origin: 5px 303px;
   transform-origin: 5px 303px;
-  will-change: transform;
 }
 
 #about .dr-sb-bicep-rear {
+  -webkit-transform-origin: -2px 287px;
   transform-origin: -2px 287px;
-  will-change: transform;
 }
 
 #about .dr-sb-forearm-rear {
+  -webkit-transform-origin: -4px 303px;
   transform-origin: -4px 303px;
-  will-change: transform;
 }
 
 /* ══════════════════════════════════════════════════
@@ -4163,56 +4078,41 @@ body.menu-open {
   }
 }
 
-#about .about-storyboard-stage.is-active .dr-sb-particle {
-  animation: dr-sb-particle-scatter 14s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+#about .about-storyboard-stage.is-active .dr-sb-p1 { animation: dr-sb-p1-scatter 14s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
+#about .about-storyboard-stage.is-active .dr-sb-p2 { animation: dr-sb-p2-scatter 14s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
+#about .about-storyboard-stage.is-active .dr-sb-p3 { animation: dr-sb-p3-scatter 14s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
+#about .about-storyboard-stage.is-active .dr-sb-p4 { animation: dr-sb-p4-scatter 14s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
+#about .about-storyboard-stage.is-active .dr-sb-p5 { animation: dr-sb-p5-scatter 14s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
+
+@keyframes dr-sb-p1-scatter {
+  0%, 41.0% { opacity: 0; transform: translate(0, 0) scale(0); }
+  43.5% { opacity: 1; transform: translate(0, 0) scale(1.5); }
+  48.0% { opacity: 0.8; }
+  52.0%, 100% { opacity: 0; transform: translate(38px, -35px) scale(0); }
 }
-
-@keyframes dr-sb-particle-scatter {
-  0%,
-  41.0% {
-    opacity: 0;
-    transform: translate(0, 0) scale(0);
-  }
-
-  43.5% {
-    opacity: 1;
-    transform: translate(0, 0) scale(1.5);
-  }
-
-  48.0% {
-    opacity: 0.8;
-  }
-
-  52.0%,
-  100% {
-    opacity: 0;
-    transform: translate(var(--tx, 25px), var(--ty, -30px)) scale(0);
-  }
+@keyframes dr-sb-p2-scatter {
+  0%, 41.0% { opacity: 0; transform: translate(0, 0) scale(0); }
+  43.5% { opacity: 1; transform: translate(0, 0) scale(1.5); }
+  48.0% { opacity: 0.8; }
+  52.0%, 100% { opacity: 0; transform: translate(-42px, -38px) scale(0); }
 }
-
-#about .dr-sb-p1 {
-  --tx: 38px;
-  --ty: -35px;
+@keyframes dr-sb-p3-scatter {
+  0%, 41.0% { opacity: 0; transform: translate(0, 0) scale(0); }
+  43.5% { opacity: 1; transform: translate(0, 0) scale(1.5); }
+  48.0% { opacity: 0.8; }
+  52.0%, 100% { opacity: 0; transform: translate(55px, -18px) scale(0); }
 }
-
-#about .dr-sb-p2 {
-  --tx: -42px;
-  --ty: -38px;
+@keyframes dr-sb-p4-scatter {
+  0%, 41.0% { opacity: 0; transform: translate(0, 0) scale(0); }
+  43.5% { opacity: 1; transform: translate(0, 0) scale(1.5); }
+  48.0% { opacity: 0.8; }
+  52.0%, 100% { opacity: 0; transform: translate(-50px, 20px) scale(0); }
 }
-
-#about .dr-sb-p3 {
-  --tx: 55px;
-  --ty: -18px;
-}
-
-#about .dr-sb-p4 {
-  --tx: -50px;
-  --ty: 20px;
-}
-
-#about .dr-sb-p5 {
-  --tx: 45px;
-  --ty: 25px;
+@keyframes dr-sb-p5-scatter {
+  0%, 41.0% { opacity: 0; transform: translate(0, 0) scale(0); }
+  43.5% { opacity: 1; transform: translate(0, 0) scale(1.5); }
+  48.0% { opacity: 0.8; }
+  52.0%, 100% { opacity: 0; transform: translate(45px, 25px) scale(0); }
 }
 
 /* ── STAGE 5: GREEN OCTAHEDRON CRYSTAL CORE (100% COMPLETELY UNOBSTRUCTED) ── */
@@ -4258,22 +4158,20 @@ body.menu-open {
 #about .about-storyboard-stage.is-active .dr-sb-octahedron {
   animation: dr-sb-octa-idle 4.5s ease-in-out infinite alternate;
   transform-origin: 365px 245px;
+  filter: drop-shadow(0 0 14px #33ff66);
 }
 
 @keyframes dr-sb-octa-idle {
   0% {
     transform: translateY(0) rotate(0deg) scale(1);
-    filter: drop-shadow(0 0 10px #33ff66);
   }
 
   50% {
     transform: translateY(-4px) rotate(2deg) scale(1.02);
-    filter: drop-shadow(0 0 18px #33ff66);
   }
 
   100% {
     transform: translateY(2px) rotate(-1.5deg) scale(0.99);
-    filter: drop-shadow(0 0 12px #33ff66);
   }
 }
 
@@ -6195,7 +6093,7 @@ body.menu-open {
   }
 
   .dr-mf-label {
-    font-family: var(--font-heading);
+    font-family: "The Seasons" !important;
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.12em;
@@ -6315,7 +6213,7 @@ body.menu-open {
   }
 
   .dr-mf-card-label {
-    font-family: monospace;
+    font-family: "The Seasons" !important;
     font-size: 0.625rem;
     font-weight: 600;
     color: var(--lime);
@@ -6357,7 +6255,7 @@ body.menu-open {
 
   .dr-mf-copy,
   .dr-mf-credit {
-    font-family: monospace;
+    font-family: "The Seasons" !important;
     font-size: 0.6875rem;
     color: rgba(255, 255, 255, 0.45);
     line-height: 1.5;
@@ -6872,12 +6770,7 @@ body.menu-open {
   .dr-mobile-label {
     fill: #ffffff;
 
-    font-family:
-      "Plus Jakarta Sans",
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      sans-serif;
+    font-family: "The Seasons" !important;
 
     font-size: 20px !important;
     font-weight: 600 !important;
@@ -7027,7 +6920,7 @@ body.menu-open {
   .dr-tablet-node text {
     fill: #ffffff;
 
-    font-family: Arial, sans-serif;
+  font-family: "The Seasons" !important;
     font-size: 23px;
     font-weight: 600;
 
@@ -7048,8 +6941,6 @@ body.menu-open {
       drop-shadow(0 0 16px rgba(0, 204, 51, 0.65));
   }
 }
-
-
 
 /* ══════════════════════════════════════════════════════════════
    DEMURUP NEW HERO — DMX
@@ -7080,29 +6971,17 @@ body.menu-open {
   background-color: var(--dmx-white);
 
   background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0.07) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.07) 1px,
-      transparent 1px
-    );
+    linear-gradient(rgba(0, 0, 0, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.07) 1px, transparent 1px);
 
   background-size: 48px 48px;
 
   color: var(--dmx-black);
 
-  font-family:
-    "Bricolage Grotesque",
-    "Helvetica Neue",
-    Arial,
-    sans-serif;
+ font-family: "The Seasons" !important;
 
   isolation: isolate;
 }
-
 
 /* ══════════════════════════════════════════════════════════════
    GREEN GRID REVEAL AROUND MOUSE
@@ -7119,44 +6998,33 @@ body.menu-open {
   pointer-events: none;
 
   background-image:
-    linear-gradient(
-      var(--dmx-green) 1.5px,
-      transparent 1.5px
-    ),
-    linear-gradient(
-      90deg,
-      var(--dmx-green) 1.5px,
-      transparent 1.5px
-    );
+    linear-gradient(var(--dmx-green) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, var(--dmx-green) 1.5px, transparent 1.5px);
 
   background-size: 48px 48px;
 
-  -webkit-mask-image:
-    radial-gradient(
-      circle 170px at var(--dmx-mx) var(--dmx-my),
-      #000 0%,
-      transparent 100%
-    );
+  -webkit-mask-image: radial-gradient(
+    circle 170px at var(--dmx-mx) var(--dmx-my),
+    #000 0%,
+    transparent 100%
+  );
 
-  mask-image:
-    radial-gradient(
-      circle 170px at var(--dmx-mx) var(--dmx-my),
-      #000 0%,
-      transparent 100%
-    );
+  mask-image: radial-gradient(
+    circle 170px at var(--dmx-mx) var(--dmx-my),
+    #000 0%,
+    transparent 100%
+  );
 
   opacity: 0;
 
   transition: opacity 0.3s ease;
 }
 
-
 /* Mouse inside hero */
 
 .dmx-hero.dmx-active::after {
   opacity: 1;
 }
-
 
 /* ══════════════════════════════════════════════════════════════
    HERO COPY
@@ -7175,7 +7043,6 @@ body.menu-open {
   pointer-events: none;
 }
 
-
 /* ══════════════════════════════════════════════════════════════
    MAIN HEADLINE
 ══════════════════════════════════════════════════════════════ */
@@ -7185,11 +7052,7 @@ body.menu-open {
 
   padding: 0;
 
-  font-family:
-    "Bricolage Grotesque",
-    "Helvetica Neue",
-    Arial,
-    sans-serif;
+  font-family: "The Seasons" !important;
 
   font-size: clamp(2.4rem, 4.8vw, 4.6rem);
 
@@ -7204,7 +7067,6 @@ body.menu-open {
   color: var(--dmx-black);
 }
 
-
 /* Each headline line */
 
 .dmx-hero-line {
@@ -7215,7 +7077,6 @@ body.menu-open {
   padding-bottom: 0.06em;
 }
 
-
 /* Text begins below clipping area */
 
 .dmx-hero-line > span {
@@ -7224,7 +7085,6 @@ body.menu-open {
   transform: translateY(105%);
 }
 
-
 /* ══════════════════════════════════════════════════════════════
    HEADLINE ENTRANCE
 ══════════════════════════════════════════════════════════════ */
@@ -7232,19 +7092,14 @@ body.menu-open {
 .dmx-hero.dmx-loaded .dmx-hero-line > span {
   transform: translateY(0);
 
-  transition:
-    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-
 
 /* Second line comes slightly later */
 
-.dmx-hero.dmx-loaded
-  .dmx-hero-line:nth-child(2)
-  > span {
+.dmx-hero.dmx-loaded .dmx-hero-line:nth-child(2) > span {
   transition-delay: 0.12s;
 }
-
 
 /* ══════════════════════════════════════════════════════════════
    TYPING SERVICE BOX
@@ -7269,11 +7124,7 @@ body.menu-open {
 
   box-shadow: 4px 4px 0 var(--dmx-black);
 
-  font-family:
-    "Bricolage Grotesque",
-    "Helvetica Neue",
-    Arial,
-    sans-serif;
+font-family: "The Seasons" !important;
 
   font-size: 1.3rem;
 
@@ -7286,16 +7137,13 @@ body.menu-open {
   opacity: 0;
 }
 
-
 /* Show typing box when hero starts */
 
 .dmx-hero.dmx-loaded .dmx-hero-typed {
   opacity: 1;
 
-  transition:
-    opacity 0.5s ease 0.5s;
+  transition: opacity 0.5s ease 0.5s;
 }
-
 
 /* ══════════════════════════════════════════════════════════════
    TYPING CARET
@@ -7315,13 +7163,11 @@ body.menu-open {
   animation: dmx-caret-blink 1s steps(1) infinite;
 }
 
-
 @keyframes dmx-caret-blink {
   50% {
     opacity: 0;
   }
 }
-
 
 /* ══════════════════════════════════════════════════════════════
    INTERACTIVE FLOATING SHAPES
@@ -7350,7 +7196,6 @@ body.menu-open {
   transition: opacity 0.4s ease;
 }
 
-
 /* SVG inside floating shape */
 
 .dmx-hero-shape svg {
@@ -7363,13 +7208,11 @@ body.menu-open {
   filter: drop-shadow(4px 4px 0 #000000);
 }
 
-
 /* Shapes which shouldn't have shadow */
 
 .dmx-hero-shape.dmx-flat svg {
   filter: none;
 }
-
 
 /* Shape while being dragged */
 
@@ -7379,13 +7222,11 @@ body.menu-open {
   z-index: 3;
 }
 
-
 /* Reveal shapes after hero starts */
 
 .dmx-hero.dmx-loaded .dmx-hero-shape {
   opacity: 1;
 }
-
 
 /* ══════════════════════════════════════════════════════════════
    SCREEN READER TEXT
@@ -7410,13 +7251,11 @@ body.menu-open {
   border: 0;
 }
 
-
 /* ══════════════════════════════════════════════════════════════
    MOBILE
 ══════════════════════════════════════════════════════════════ */
 
 @media (max-width: 640px) {
-
   .dmx-hero {
     min-height: 100svh;
 
@@ -7424,27 +7263,22 @@ body.menu-open {
     padding-right: 1rem;
   }
 
-
   .dmx-hero-title {
     font-size: clamp(2.4rem, 12vw, 4rem);
   }
-
 
   .dmx-hero-typed {
     max-width: 100%;
 
     font-size: 1.3rem;
   }
-
 }
-
 
 /* ══════════════════════════════════════════════════════════════
    REDUCED MOTION
 ══════════════════════════════════════════════════════════════ */
 
 @media (prefers-reduced-motion: reduce) {
-
   .dmx-hero-line > span {
     transition-duration: 0.01ms !important;
   }
@@ -7457,5 +7291,685 @@ body.menu-open {
   .dmx-hero-caret {
     animation: none;
   }
+}
 
+
+
+/* =========================================================
+   DEMURUP TESTIMONIALS
+   Unique namespace: dmtest-
+========================================================= */
+
+#dmtest-clients {
+  --dmtest-green: #00cc33;
+  --dmtest-black: #000;
+  --dmtest-white: #fff;
+  --dmtest-display: 'Archivo Black', 'Arial Black', Impact, sans-serif;
+  --dmtest-body: 'Montserrat', Arial, sans-serif;
+
+  font-family: "The Seasons" !important;
+  color: var(--dmtest-white);
+  background: var(--dmtest-black);
+
+  min-height: 100vh;
+  min-height: 100svh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: clamp(24px, 5vh, 64px) 20px;
+
+  overflow: hidden;
+}
+
+
+/* TITLE
+========================================================= */
+
+#dmtest-clients .dmtest-title {
+  font-family: "The Seasons" !important;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+
+  line-height: 1.02;
+
+  font-size: clamp(
+    2rem,
+    min(7.5vw, 11vh),
+    5.5rem
+  );
+
+  margin: 0 0 clamp(24px, 6vh, 72px);
+  padding: 0;
+
+  color: var(--dmtest-white);
+}
+
+
+/* WRAPPER
+========================================================= */
+
+#dmtest-clients .dmtest-wrap {
+  position: relative;
+
+  max-width: 1020px;
+  width: 100%;
+
+  margin: 0 auto;
+
+  padding: 0 clamp(48px, 9vw, 130px);
+}
+
+
+/* TESTIMONIAL CONTAINER
+========================================================= */
+
+#dmtest-clients .dmtest-cont {
+  display: grid;
+}
+
+
+/* SLIDES
+========================================================= */
+
+#dmtest-clients .dmtest-slide {
+  grid-area: 1 / 1;
+
+  text-align: center;
+
+  padding-bottom: clamp(32px, 6vh, 56px);
+
+  visibility: hidden;
+  opacity: 0;
+
+  transform: translateY(24px);
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    visibility 0s 0.4s;
+}
+
+
+#dmtest-clients .dmtest-slide.is-active {
+  visibility: visible;
+  opacity: 1;
+
+  transform: none;
+
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease,
+    visibility 0s;
+}
+
+
+/* CLIENT NAME
+========================================================= */
+
+#dmtest-clients .dmtest-slide h3 {
+  margin: 0;
+  padding: 0;
+
+  color: var(--dmtest-green);
+
+  font-family: "The Seasons" !important;
+
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  line-height: 1.3;
+}
+
+
+/* CLIENT ROLE
+========================================================= */
+
+#dmtest-clients .dmtest-role {
+  display: block;
+
+  margin-top: 4px;
+
+  font-size: 0.9rem;
+  font-weight: 400;
+
+  opacity: 0.75;
+}
+
+
+/* TESTIMONIAL TEXT
+========================================================= */
+
+#dmtest-clients .dmtest-slide p {
+  max-width: 62ch;
+
+  margin: 22px auto 0;
+  padding: 0;
+
+  color: var(--dmtest-white);
+
+  font-family: "The Seasons" !important;
+  font-size: clamp(
+    1rem,
+    min(1.9vw, 2.8vh),
+    1.4rem
+  );
+
+  line-height: 1.7;
+
+  font-weight: 300;
+}
+
+
+/* ARROWS
+========================================================= */
+
+#dmtest-clients .dmtest-arrow {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-70%);
+
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  margin: 0;
+  padding: 0;
+
+  background: none;
+  border: 0;
+
+  color: var(--dmtest-white);
+
+  cursor: pointer;
+
+  transition: color 0.25s ease;
+
+  z-index: 5;
+}
+
+
+#dmtest-clients .dmtest-arrow svg {
+  width: 26px;
+  height: 26px;
+
+  display: block;
+}
+
+
+#dmtest-clients .dmtest-arrow:hover {
+  color: var(--dmtest-green);
+}
+
+
+#dmtest-clients .dmtest-arrow:focus-visible,
+#dmtest-clients .dmtest-dot:focus-visible {
+  outline: 2px solid var(--dmtest-white);
+  outline-offset: 4px;
+}
+
+
+#dmtest-clients .dmtest-left {
+  left: 0;
+}
+
+
+#dmtest-clients .dmtest-right {
+  right: 0;
+}
+
+
+/* DOTS
+========================================================= */
+
+#dmtest-clients .dmtest-dots {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 20px;
+
+  margin-top: 8px;
+}
+
+
+#dmtest-clients .dmtest-dot {
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  border: 1px solid var(--dmtest-green);
+
+  background: transparent;
+
+  margin: 0;
+  padding: 0;
+
+  cursor: pointer;
+
+  transition: background 0.3s ease;
+}
+
+
+#dmtest-clients .dmtest-dot:hover,
+#dmtest-clients .dmtest-dot.is-active {
+  background: var(--dmtest-green);
+}
+
+
+/* MOBILE
+========================================================= */
+
+@media (max-width: 560px) {
+
+  #dmtest-clients .dmtest-wrap {
+    padding: 0 8px;
+  }
+
+  #dmtest-clients .dmtest-arrow {
+    top: auto;
+    bottom: -8px;
+
+    transform: none;
+  }
+
+  #dmtest-clients .dmtest-left {
+    left: calc(50% - 150px);
+  }
+
+  #dmtest-clients .dmtest-right {
+    right: calc(50% - 150px);
+  }
+
+  #dmtest-clients .dmtest-dots {
+    margin-top: 0;
+  }
+
+  #dmtest-clients .dmtest-slide {
+    padding-bottom: 64px;
+  }
+}
+
+
+/* REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  #dmtest-clients .dmtest-slide,
+  #dmtest-clients .dmtest-slide.is-active {
+    transition: none;
+    transform: none;
+  }
+
+}
+
+
+/* =========================================================
+   BRANDS THAT TRUST US
+   Unique namespace: dmbrand-
+========================================================= */
+
+#dmbrand-section {
+  --dmbrand-green: #00cc33;
+  --dmbrand-black: #000;
+  --dmbrand-white: #fff;
+  --dmbrand-font: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
+
+  position: relative;
+  overflow: hidden;
+
+  padding:
+    clamp(4rem, 9vw, 8rem)
+    clamp(1.25rem, 5vw, 4rem)
+    clamp(4.5rem, 8vw, 7.5rem);
+
+  background: var(--dmbrand-white);
+  color: var(--dmbrand-black);
+  font-family: "The Seasons" !important;
+}
+
+
+/* WRAPPER
+========================================================= */
+
+#dmbrand-section .dmbrand-wrap {
+  position: relative;
+  z-index: 1;
+
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+
+/* TITLE
+========================================================= */
+
+#dmbrand-section .dmbrand-title {
+  margin: 0 0 clamp(2.5rem, 6vw, 4.5rem);
+  padding: 0;
+
+  color: var(--dmbrand-black);
+
+font-family: "The Seasons" !important;
+  font-size: clamp(2.6rem, 7.2vw, 6.4rem);
+  font-weight: 800;
+
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+
+  text-transform: uppercase;
+}
+
+
+#dmbrand-section .dmbrand-green {
+  position: relative;
+
+  display: inline-block;
+
+  color: var(--dmbrand-green);
+}
+
+
+#dmbrand-section .dmbrand-green svg {
+  position: absolute;
+
+  left: 0;
+  bottom: -0.14em;
+
+  width: 100%;
+  height: 0.2em;
+
+  overflow: visible;
+}
+
+
+/* LOGO WALL
+========================================================= */
+
+#dmbrand-section .dmbrand-wall {
+  display: grid;
+
+  grid-template-columns: repeat(6, 1fr);
+
+  gap: 2px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  background: var(--dmbrand-black);
+
+  border: 2px solid var(--dmbrand-black);
+
+  box-shadow: 5px 5px 0 var(--dmbrand-black);
+}
+
+
+/* LOGO CARD
+========================================================= */
+
+#dmbrand-section .dmbrand-logo {
+  position: relative;
+
+  display: grid;
+  place-items: center;
+
+  height: 9.5rem;
+
+  padding: 1.5rem;
+
+  background: var(--dmbrand-white);
+
+  /* Keep cards visible by default */
+  opacity: 1;
+  transform: translateY(0);
+
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+
+  transition:
+    transform 0.3s cubic-bezier(.2,.8,.2,1),
+    box-shadow 0.3s,
+    outline-color 0.2s;
+
+  cursor: default;
+}
+
+
+/* JS can still add .in safely */
+#dmbrand-section .dmbrand-logo.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* LOGO IMAGE
+========================================================= */
+
+#dmbrand-section .dmbrand-logo img {
+  display: block;
+
+  max-width: 90%;
+  max-height: 4rem;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+
+  /* Keep original brand colors */
+  filter: none !important;
+  opacity: 1 !important;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+/* FALLBACK BRAND NAME
+========================================================= */
+
+#dmbrand-section .dmbrand-fallback {
+  display: none;
+
+  color: #6b6b6b;
+
+  font-size: 1.15rem;
+  font-weight: 800;
+
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  transition: color 0.3s;
+}
+
+
+#dmbrand-section .dmbrand-logo.dmbrand-missing img {
+  display: none;
+}
+
+
+#dmbrand-section .dmbrand-logo.dmbrand-missing .dmbrand-fallback {
+  display: block;
+}
+
+
+/* GREEN CORNER DOT
+========================================================= */
+
+#dmbrand-section .dmbrand-logo::before {
+  content: "";
+
+  position: absolute;
+
+  left: 10px;
+  top: 10px;
+
+  width: 8px;
+  height: 8px;
+
+  background: var(--dmbrand-green);
+
+  opacity: 0;
+
+  transform: scale(0.4);
+
+  transition:
+    opacity 0.2s,
+    transform 0.25s;
+}
+
+
+/* HOVER
+========================================================= */
+
+#dmbrand-section .dmbrand-logo:hover,
+#dmbrand-section .dmbrand-logo:focus-visible {
+  position: relative;
+
+  z-index: 2;
+
+  transform: translate(-3px, -4px);
+
+  box-shadow: 6px 6px 0 var(--dmbrand-black);
+
+  outline-color: var(--dmbrand-black);
+}
+
+
+#dmbrand-section .dmbrand-logo:hover img,
+#dmbrand-section .dmbrand-logo:focus-visible img {
+  filter: none;
+
+  opacity: 1;
+}
+
+
+#dmbrand-section .dmbrand-logo:hover .dmbrand-fallback,
+#dmbrand-section .dmbrand-logo:focus-visible .dmbrand-fallback {
+  color: var(--dmbrand-black);
+}
+
+
+#dmbrand-section .dmbrand-logo:hover::before,
+#dmbrand-section .dmbrand-logo:focus-visible::before {
+  opacity: 1;
+
+  transform: none;
+}
+
+
+#dmbrand-section .dmbrand-logo:focus-visible {
+  outline-offset: -4px;
+}
+
+
+/* TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  #dmbrand-section .dmbrand-wall {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+}
+
+
+/* SMALL TABLET
+========================================================= */
+
+@media (max-width: 760px) {
+
+  #dmbrand-section .dmbrand-wall {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #dmbrand-section .dmbrand-logo {
+    height: 7.5rem;
+    padding: 1rem;
+  }
+
+  #dmbrand-section .dmbrand-logo img {
+    max-height: 2.6rem;
+  }
+
+  #dmbrand-section .dmbrand-fallback {
+    font-size: 0.95rem;
+  }
+
+}
+
+
+/* MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  #dmbrand-section .dmbrand-wall {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #dmbrand-section .dmbrand-logo {
+    height: 7rem;
+  }
+
+}
+
+
+/* TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) {
+
+  #dmbrand-section .dmbrand-logo img {
+    filter: none;
+    opacity: 1;
+  }
+
+  #dmbrand-section .dmbrand-fallback {
+    color: var(--dmbrand-black);
+  }
+
+}
+
+
+/* REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  #dmbrand-section .dmbrand-logo,
+  #dmbrand-section .dmbrand-logo.in {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+
+}
+
+/* Make very light/white source logos visible */
+#dmbrand-section .dmbrand-logo.dmbrand-dark-logo img {
+  filter: brightness(0) !important;
+  opacity: 1 !important;
+}
+
+/* Keep them black on hover too */
+#dmbrand-section .dmbrand-logo.dmbrand-dark-logo:hover img,
+#dmbrand-section .dmbrand-logo.dmbrand-dark-logo:focus-visible img {
+  filter: brightness(0) !important;
+  opacity: 1 !important;
+  transform: scale(1.06);
 }
